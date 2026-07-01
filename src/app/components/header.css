@@ -1,0 +1,142 @@
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	background-color: var(--background);
+}
+
+header .headerContent {
+	height: 66px;
+	padding: 0 var(--sidePadding);
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+header .searchContainer {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+header .searchContainer input {
+	padding: 7px 0 7px calc(10px + 22px + 15px);
+	border: 2px solid var(--darkSand);
+	border-radius: 10px;
+	background-color: var(--background);
+	width: 100%;
+	height: 40px;
+}
+
+header .searchContainer input:focus {
+	outline: none;
+	border-color: var(--extraDarkSand);
+}
+
+header .searchContainer input::placeholder {
+	color: var(--black);
+	opacity: 0.5;
+}
+
+header .searchContainer .searchIcon {
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 22px;
+	height: 22px;
+	color: var(--darkSand);
+}
+
+header nav,
+header nav .navLinks {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 25px;
+}
+
+header nav .menuButton {
+	display: none;
+}
+
+header nav a {
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+header nav a img {
+	display: block;
+	height: auto;
+	width: auto;
+}
+
+header .cartBlock {
+	position: relative;
+}
+
+header .cartCount {
+	position: absolute;
+	top: 0;
+	right: -10px;
+	background-color: var(--red);
+	color: var(--white);
+	border-radius: 6px;
+	width: 22px;
+	height: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+/* убирает поисковую строку */
+@media (max-width: 940px) {
+	header .searchContainer .searchIcon {
+		position: static;
+		transform: none;
+		color: var(--black);
+	}
+
+	header .searchContainer {
+		display: inline-flex;
+		justify-content: right;
+	}
+
+	header .searchContainer input {
+		display: none;
+	}
+}
+
+/* убирает навигацию */
+@media (max-width: 815px) {
+	header nav .navLinks {
+		display: none;
+	}
+
+	header nav .menuButton {
+		display: block;
+	}
+}
+
+/* мобильная версия */
+@media(max-width: 645px) {
+	header .headerContent {
+		height: 56px;
+		padding: 0 var(--mobileSidePadding);
+	}
+
+	header .logo {
+		width: 152px;
+		height: 19px;
+	}
+
+	header .icon,
+	header .searchContainer .searchIcon {
+		width: 20px;
+		height: auto;
+	}
+}

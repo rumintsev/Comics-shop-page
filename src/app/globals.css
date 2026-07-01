@@ -1,32 +1,52 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #F6E2C9;
+	--darkSand: #EAD0B0;
+	--extraDarkSand: #dcb17d;
+	--black: #111111;
+	--red: #E12B2B;
+	--white: #FFFFFF;
+	--orange: #F2AE23;
+	--green: #04391A;
+	--darkGreen: #00220E;
+	--grey: #AFAFAF;
+	--sidePadding: 60px;
+	--mobileSidePadding: 16px;
+	--headerFS: 65px;
+	--headerMobileFS: 41px;
+	--butonFS: 18px;
+	--butonMobileFS: 16px;
 }
 
 html {
-  height: 100%;
+	height: 100%;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+	overflow-x: hidden;
+	background-color: var(--background);
 }
 
 body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-inter), system-ui, sans-serif;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+
+	font-family: var(--font-inter), system-ui, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 140%;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
