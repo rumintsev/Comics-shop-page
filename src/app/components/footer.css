@@ -13,32 +13,63 @@ footer .footerContent {
 	flex-direction: column;
 }
 
-footer .footerContent .footerLogo {
-	width: 184px;
-	height: 23px;
-	color: var(--white);
-}
-
-footer .footerContent .footerLinks {
+footer .footerLinks {
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
 }
 
-footer .footerContent .footerLinks ul {
+footer .footerLinks ul {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
 	list-style: none;
 	gap: 16px;
+	width: 100%;
+	max-width: 160px;
 }
 
-footer .footerContent .footerLinks ul li:first-child {
-	color: var(--grey);
+footer .footerLinks ul:last-child {
+	max-width: none;
+}
+
+footer .footerLinks ul li:first-child {
 	font-weight: 700;
 }
 
-.footerContent .copyright {
+footer .newsLetter {
+	position: relative;
+}
+
+footer input {
+	padding: 12px calc(15px + 76.2px) 12px 15px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	position: relative;
+	width: 100%;
+	font-weight: 500;
+}
+
+footer button {
+	padding: 6px 9px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	color: var(--black);
+	background-color: var(--orange);
+	font-weight: 600;
+	cursor: pointer;
+}
+
+footer hr {
+	opacity: 35%;
+}
+
+footer .copyright {
 	display: flex;
 	justify-content: space-between;
 	gap: 16px;
@@ -50,13 +81,24 @@ footer .copyright li {
 	white-space: nowrap;
 }
 
-@media(max-width: 560px) {
-	footer .footerContent .footerLogo {
-		width: 152px;
-		height: 19px;
+@media(max-width: 645px) {
+	footer .footerLinks {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 32px 0;
 	}
 
-	footer .footerContent .copyright li:first-child {
+	footer .footerLinks ul {
+		flex: 0 0 calc(50%);
+		max-width: calc(50%);
+	}
+
+	footer .footerLinks ul:last-child {
+		flex-basis: 100%;
+		max-width: 100%;
+	}
+
+	footer .copyright li:first-child {
 		white-space: wrap;
 	}
 }

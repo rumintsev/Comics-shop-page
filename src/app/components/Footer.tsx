@@ -5,8 +5,6 @@ export default function Footer() {
 	return (
 		<footer>
 			<div className="footerContent">
-				<Logo className="footerLogo" aria-label="Logo" />
-				<hr />
 				<div className="footerLinks">
 					<ul>
 						<li>CATALOG</li>
@@ -22,9 +20,12 @@ export default function Footer() {
 						<li><a href="#">FAQ</a></li>
 					</ul>
 					<ul>
-						<li>COMPANY</li>
-						<li><a href="#">Contact Us</a></li>
-						<li><a href="#">About Us</a></li>
+						<li>JOIN THE COMIX CLUB</li>
+						<li>Get the latest news and drops</li>
+						<li className="newsLetter">
+							<input type="email" placeholder="Email" />
+							<button>Sign up</button>
+						</li>
 					</ul>
 				</div>
 				<hr />

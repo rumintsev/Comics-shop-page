@@ -18,26 +18,49 @@
 
 .homePage .heroSection p {
 	font-weight: 500;
+	font-size: 18px;
 	max-width: 514px;
 	text-align: center;
 	margin: 0 auto;
 	margin-bottom: 25px;
 }
 
+.homePage .buttonContainer {
+	position: relative;
+	width: fit-content;
+}
+
 .homePage .heroSection a,
 .homePage .popularSeries a,
-.homePage .anniversary .anniversaryInfo a {
+.homePage .anniversary a {
+	display: block;
 	font-size: var(--butonFS);
 	padding: 19px 51px;
 	cursor: pointer;
 	font-weight: 600;
-	border-radius: 20px;
+	border-radius: 15px;
+	border: 3px solid var(--black);
+	position: relative;
+	z-index: 1;
+	white-space: nowrap;
+}
+
+.homePage .buttonBack {
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--black);
+	border-radius: 15px;
 }
 
 .homePage .heroSection a {
-	display: block;
-	width: fit-content;
 	background-color: var(--orange);
+}
+
+.homePage .heroSection .buttonContainer {
 	margin: 0 auto;
 }
 
@@ -46,6 +69,7 @@
 	width: 100%;
 	max-width: 1320px;
 	margin: 0 auto;
+	margin-top: 25px;
 	margin-bottom: 55px;
 	height: fit-content;
 }
@@ -68,7 +92,7 @@
 
 .homePage .newReleases {
 	background-color: var(--orange);
-	padding-bottom: 48px;
+	padding-bottom: 32px;
 	padding-top: 16px;
 }
 
@@ -93,70 +117,64 @@
 
 .homePage .newReleases .comicsContainer {
 	display: flex;
-	flex-wrap: wrap;
-	gap: 40px 32px;
-	justify-content: center;
-	margin-top: 39px;
+	gap: 32px 16px;
+	margin-top: 30px;
 }
 
 .homePage .newReleases .comicsContainer .comic {
 	display: flex;
-	gap: 20px;
-	min-width: 484px;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
 }
 
-.homePage .newReleases .comicsContainer .comic .comicInfo,
 .homePage .newReleases .comicsContainer .comic img {
-	max-width: 232px;
+	width: 100%;
 }
 
 .homePage .newReleases .comicsContainer .comic .comicInfo {
 	display: flex;
 	flex-direction: column;
-	gap: 18px;
+	gap: 5px;
 }
 
-.homePage .newReleases .comicsContainer .comic h3 {
-	font-size: 20px;
+.homePage .newReleases .comicsContainer .comic .price,
+.homePage .popularSeries .comicsContainerOfThree .comic .price {
+	display: flex;
+	align-items: baseline;
+	gap: 10px;
+}
+
+.homePage .newReleases .comicsContainer .comic .price h4,
+.homePage .popularSeries .comicsContainerOfThree .comic .price h4 {
+	font-weight: 600;
+}
+
+.homePage .newReleases .comicsContainer .comic .price span,
+.homePage .popularSeries .comicsContainerOfThree .comic .price span {
+	text-decoration: line-through;
+	font-size: 14px;
+	opacity: 65%;
 	font-weight: 600;
 }
 
 .homePage .popularSeries {
 	background-color: var(--green);
-	padding-bottom: 48px;
+	padding-bottom: 60px;
 	padding-top: 48px;
-	color: var(--orange);
+	color: var(--greenWhite);
 }
 
 .homePage .popularSeries .headline {
-	color: var(--white);
-	border-bottom: 5px solid var(--white);
 	text-align: left;
-	margin-bottom: 20px;
-}
-
-.homePage .popularSeries .seriesInfo {
-	display: flex;
-	gap: 10px;
-	margin-bottom: 10px;
-}
-
-.homePage .popularSeries .seriesInfo h3 {
-	font-family: var(--font-staatliches), system-ui, sans-serif;
-	font-size: 45px;
-	width: 100%;
-	line-height: 120%;
-}
-
-.homePage .popularSeries .seriesInfo h4 {
-	white-space: nowrap;
+	margin-bottom: 16px;
 }
 
 .homePage .popularSeries .comicsContainerOfThree {
-	margin-top: 40px;
-	margin-bottom: 30px;
+	margin-top: 30px;
+	margin-bottom: 40px;
 	display: grid;
-	gap: 32px;
+	gap: 32px 16px;
 	grid-template-columns: repeat(3, 1fr);
 }
 
@@ -168,60 +186,72 @@
 .homePage .popularSeries .comicsContainerOfThree .comic {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 10px;
 }
 
 .homePage .popularSeries .comicsContainerOfThree .comic .comicInfo {
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
-}
-
-.homePage .popularSeries .comicsContainerOfThree .comic .comicInfo h4 {
-	font-size: 20px;
-	font-weight: 600;
+	gap: 5px;
 }
 
 .homePage .popularSeries a {
-	display: inline-flex;
-	color: var(--white);
-	background-color: var(--darkGreen);
+	background-color: var(--lightGreen);
+	border-color: var(--greenWhite);
+}
+
+.homePage .popularSeries .buttonContainer .buttonBack {
+	background-color: var(--greenWhite);
 }
 
 .homePage .anniversary {
-	margin-top: 48px;
-	margin-bottom: 48px;
+	margin-top: 70px;
+	margin-bottom: 70px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
 }
 
-.homePage .anniversary img {
+.homePage .anniversary h2 {
+	text-align: left;
+	white-space: nowrap;
+	margin-bottom: -10px;
+}
+
+.homePage .anniversary img,
+.homePage .anniversary .anniversaryBigBlock {
 	width: 100%;
-}
-
-.homePage .anniversary .anniversaryInfo {
+	min-width: 0;
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
-	max-width: 586px;
+}
+
+.homePage .anniversary .anniversaryBigBlock img {
+	display: none;
 }
 
 .homePage .anniversary .anniversaryInfo p,
-.homePage .anniversary .anniversaryInfo h3 {
+.homePage .anniversary b {
 	font-size: 18px;
 }
 
-.homePage .anniversary .anniversaryInfo h3 {
-	font-weight: 600;
+.homePage .anniversary b {
+	font-weight: 700;
 }
 
-.homePage .anniversary .anniversaryInfo a {
+.homePage .anniversary a {
 	width: fit-content;
 	background-color: var(--orange);
 }
 
-/* планшет*/
-@media (max-width: 940px) {
-	.homePage .heroSection img {
-		margin-top: 16px;
+/* New Releases block  */
+@media(max-width: 815px) {
+	.homePage .newReleases .comicsContainer {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		max-width: 613px;
 	}
 }
 
@@ -229,7 +259,7 @@
 @media(max-width: 645px) {
 	.homePage {
 		padding: 0 16px;
-		margin-top: 56px;
+		margin-top: 54px;
 	}
 
 	.homePage .headline {
@@ -237,91 +267,64 @@
 	}
 
 	.homePage .heroSection .headline {
-		max-width: 358px;
-		margin: 10px auto 15px;
+		max-width: 250px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.homePage .heroSection p {
-		max-width: 341px;
+		max-width: 301px;
 	}
 
-	.homePage .heroSection a,
-	.homePage .popularSeries a,
-	.homePage .anniversary .anniversaryInfo a {
-		font-size: var(--butonMobileFS);
-	}
-
-	.homePage .heroSection img {
-		margin-bottom: 48px;
-	}
-
-	.homePage .newReleases a {
-		font-size: var(--butonMobileFS);
-		padding: 0 15px;
-	}
-
-	.homePage .newReleases .comicsContainer {
-		flex-direction: column;
-	}
-
-	.homePage .newReleases .comicsContainer .comic,
-	.homePage .popularSeries .comicsContainerOfThree .comic {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 16px;
-		min-width: 0;
-	}
-
-	.homePage .newReleases .comicsContainer .comic .comicInfo,
-	.homePage .newReleases .comicsContainer .comic img {
-		max-width: none;
-		width: 100%;
-	}
-
-	.homePage .newReleases .comicsContainer .comic .comicInfo {
-		gap: 16px;
-	}
-
-	.homePage .newReleases .comicsContainer .comic h3,
-	.homePage .newReleases .comicsContainer .comic p {
-		font-size: 14px;
-	}
-
-	.homePage .popularSeries .seriesInfo {
-		margin-bottom: 20px;
-	}
-
-	.homePage .popularSeries .seriesInfo h3 {
-		font-size: 30px;
-	}
-
-	.homePage .popularSeries .seriesInfo h4 {
-		font-size: 12px;
+	.homePage .heroSection .imageContainer {
+		margin-left: -16px;
+		margin-right: -16px;
 	}
 
 	.homePage .popularSeries .comicsContainerOfThree {
-		margin-top: 32px;
-		display: flex;
-		flex-direction: column;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		max-width: 613px;
+		margin-right: auto;
+		margin-left: auto;
 	}
 
-	.homePage .popularSeries .comicsContainerOfThree .comic .comicInfo h4,
-	.homePage .popularSeries .comicsContainerOfThree .comic .comicInfo p {
-		font-size: 14px;
+	.homePage .popularSeries .buttonContainer,
+	.homePage .anniversary .buttonContainer {
+		width: 100%;
 	}
 
-	.homePage .popularSeries a {
+	.homePage .popularSeries .buttonContainer a,
+	.homePage .anniversary .buttonContainer a {
 		display: block;
-		text-align: center;
-	}
-
-	.homePage .anniversary .anniversaryInfo p,
-	.homePage .anniversary .anniversaryInfo h3 {
-		font-size: 16px;
-	}
-
-	.homePage .anniversary .anniversaryInfo a {
 		width: 100%;
 		text-align: center;
+	}
+
+	.homePage .anniversary {
+		grid-template-columns: 1fr;
+	}
+
+	.homePage .anniversary br:last-child {
+		display: none;
+	}
+
+	.homePage .anniversary .headline {
+		text-align: center;
+		margin-bottom: 0;
+	}
+
+	.homePage .anniversary img {
+		display: none;
+	}
+
+	.homePage .anniversary .anniversaryBigBlock img {
+		max-width: 370px;
+		margin: 0 auto;
+		display: block;
+	}
+
+	.homePage .anniversary .anniversaryBigBlock p:last-of-type {
+		margin-top: -10px;
 	}
 }

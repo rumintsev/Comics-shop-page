@@ -125,18 +125,12 @@ header .cartCount {
 /* мобильная версия */
 @media(max-width: 645px) {
 	header .headerContent {
-		height: 56px;
+		height: 54px;
 		padding: 0 var(--mobileSidePadding);
 	}
 
 	header .logo {
-		width: 152px;
-		height: 19px;
-	}
-
-	header .icon,
-	header .searchContainer .searchIcon {
-		width: 20px;
-		height: auto;
+		width: 160px;
+		height: 20px;
 	}
 }
