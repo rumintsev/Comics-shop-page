@@ -112,7 +112,7 @@ header .cartCount {
 }
 
 /* убирает навигацию */
-@media (max-width: 815px) {
+@media (max-width: 820px) {
 	header nav .navLinks {
 		display: none;
 	}

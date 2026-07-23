@@ -93,7 +93,7 @@
 .homePage .newReleases {
 	background-color: var(--orange);
 	padding-bottom: 32px;
-	padding-top: 16px;
+	padding-top: 32px;
 }
 
 .homePage .newReleases a {
@@ -245,8 +245,14 @@
 	background-color: var(--orange);
 }
 
-/* New Releases block  */
-@media(max-width: 815px) {
+/* New Releases and heroSection headline */
+@media(max-width:820px) {
+	.homePage .heroSection .headline {
+		max-width: 529px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	.homePage .newReleases .comicsContainer {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -266,19 +272,46 @@
 		font-size: var(--headerMobileFS);
 	}
 
+	.homePage .heroSection {
+		display: flex;
+		flex-direction: column;
+	}
+
 	.homePage .heroSection .headline {
 		max-width: 250px;
 		margin-left: auto;
 		margin-right: auto;
-	}
-
-	.homePage .heroSection p {
-		max-width: 301px;
+		margin-bottom: 10px;
 	}
 
 	.homePage .heroSection .imageContainer {
-		margin-left: -16px;
-		margin-right: -16px;
+		order: 1;
+	}
+
+	.homePage .heroSection img {
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+
+	.homePage .heroSection p {
+		order: 2;
+		max-width: 301px;
+		margin-bottom: 40px;
+	}
+
+	.homePage .heroSection .buttonContainer {
+		order: 3;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 64px;
+	}
+
+	.homePage .newReleases {
+		padding-bottom: 48px;
+	}
+
+	.homePage .newReleases a {
+		padding: 10px 15px 5px 15px;
 	}
 
 	.homePage .popularSeries .comicsContainerOfThree {
